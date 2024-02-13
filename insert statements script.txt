@@ -1,0 +1,92 @@
+-- Insert statements for ORDERS table
+INSERT INTO ORDERS (OrderID, CustomerName, OrderDate, Quantity, Amount, PaymentMode, DeliveryTime, CustomerRatingFood, CustomerRatingDelivery)
+VALUES
+(1, 'John Doe', '2024-02-12', 2, 25.50, 'Credit Card', 30, 4, 5),
+(2, 'Jane Smith', '2024-02-13', 3, 35.75, 'Cash', 45, 5, 4),
+(3, 'Mike Johnson', '2024-02-14', 1, 15.25, 'Online Transfer', 25, 3, 2),
+(4, 'Emily White', '2024-02-15', 4, 45.20, 'Cash', 40, 5, 5),
+(5, 'David Brown', '2024-02-16', 2, 20.75, 'Credit Card', 35, 4, 3),
+(6, 'Sophie Turner', '2024-02-17', 3, 30.00, 'Online Transfer', 50, 5, 4),
+(7, 'Chris Evans', '2024-02-18', 1, 12.50, 'Cash', 30, 3, 3),
+(8, 'Emma Roberts', '2024-02-19', 2, 22.90, 'Credit Card', 40, 4, 5);
+
+-- Insert statements for RESTAURANTS table
+INSERT INTO RESTAURANTS (RestaurantID, RestaurantName, Cuisine, Zone, CategoryID)
+VALUES
+(1, 'Tasty Bites', 'Italian', 'North', 1),
+(2, 'Spice Haven', 'Indian', 'South', 2),
+(3, 'Sushi Delight', 'Japanese', 'East', 3),
+(4, 'Mediterranean Flavors', 'Mediterranean', 'West', 1),
+(5, 'Burger Joint', 'American', 'Central', 2),
+(6, 'Thai Delights', 'Thai', 'North', 3),
+(7, 'Mexican Fiesta', 'Mexican', 'South', 1),
+(8, 'Vegetarian Paradise', 'Vegetarian', 'East', 2);
+
+-- Insert statements for CUSTOMERS table
+INSERT INTO CUSTOMERS (CustomerID, CustomerName)
+VALUES
+(1, 'Alice Johnson'),
+(2, 'Bob Smith'),
+(3, 'Charlie Brown'),
+(4, 'Diana Miller'),
+(5, 'Edward White'),
+(6, 'Fiona Turner'),
+(7, 'George Roberts'),
+(8, 'Helen Evans');
+
+-- Insert statements for PAYMENTS table
+INSERT INTO PAYMENTS (PaymentID, OrderID, Amount, PaymentMode)
+VALUES
+(1, 1, 25.50, 'Credit Card'),
+(2, 2, 35.75, 'Cash'),
+(3, 3, 15.25, 'Online Transfer'),
+(4, 4, 45.20, 'Cash'),
+(5, 5, 20.75, 'Credit Card'),
+(6, 6, 30.00, 'Online Transfer'),
+(7, 7, 12.50, 'Cash'),
+(8, 8, 22.90, 'Credit Card');
+
+-- Insert statements for DELIVERYFEEDBACK table
+INSERT INTO DELIVERYFEEDBACK (FeedbackID, OrderID, FeedbackText, Rating)
+VALUES
+(1, 1, 'Great service and delicious food!', 5),
+(2, 2, 'On-time delivery, but food could be warmer.', 4),
+(3, 3, 'Delivery was late, and food was cold.', 2),
+(4, 4, 'Excellent delivery and tasty food!', 5),
+(5, 5, 'Average service and food quality.', 3),
+(6, 6, 'Fast delivery, but food was too spicy.', 4),
+(7, 7, 'Delivery person was rude, and food was cold.', 3),
+(8, 8, 'Perfect in every aspect! Will order again.', 5);
+
+-- Insert statements for MENUS table
+INSERT INTO MENUS (MenuID, RestaurantID, ItemName, Price)
+VALUES
+(1, 1, 'Margherita Pizza', 12.99),
+(2, 2, 'Chicken Curry', 15.50),
+(3, 3, 'Sushi Combo', 18.75),
+(4, 4, 'Greek Salad', 10.99),
+(5, 5, 'Classic Burger', 8.75),
+(6, 6, 'Pad Thai', 14.00),
+(7, 7, 'Taco Platter', 11.25),
+(8, 8, 'Vegetarian Lasagna', 16.90);
+
+-- Insert statements for CATEGORIES table
+INSERT INTO CATEGORIES (CategoryID, CategoryName)
+VALUES
+(1, 'Italian'),
+(2, 'Indian'),
+(3, 'Japanese'),
+(4, 'Mediterranean'),
+(5, 'American'),
+(6, 'Thai'),
+(7, 'Mexican'),
+(8, 'Vegetarian');
+
+-- Insert statements for ZONES table
+INSERT INTO ZONES (ZoneID, ZoneName)
+VALUES
+(1, 'North'),
+(2, 'South'),
+(3, 'East'),
+(4, 'West'),
+(5, 'Central');

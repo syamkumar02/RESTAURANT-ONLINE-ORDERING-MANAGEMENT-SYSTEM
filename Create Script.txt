@@ -1,0 +1,66 @@
+CREATE TABLE ORDERS (
+    OrderID INT PRIMARY KEY ,
+    CustomerName VARCHAR(255),
+    OrderDate DATE,
+    Quantity INT,
+    Amount DECIMAL(10, 2),
+    PaymentMode VARCHAR(50),
+    DeliveryTime INT,
+    CustomerRatingFood INT,
+    CustomerRatingDelivery INT
+);
+
+
+CREATE TABLE RESTAURANTS (
+    RestaurantID INT PRIMARY KEY ,
+    RestaurantName VARCHAR(255),
+    Cuisine VARCHAR(50),
+    Zone VARCHAR(50),
+    CategoryID INT,
+    FOREIGN KEY (CategoryID) REFERENCES CATEGORIES(CategoryID)
+);
+
+
+CREATE TABLE CUSTOMERS (
+    CustomerID INT PRIMARY KEY ,
+    CustomerName VARCHAR(255)
+);
+
+
+CREATE TABLE PAYMENTS (
+    PaymentID INT PRIMARY KEY ,
+    OrderID INT,
+    Amount DECIMAL(10, 2),
+    PaymentMode VARCHAR(50),
+    FOREIGN KEY (OrderID) REFERENCES ORDERS(OrderID)
+);
+
+
+CREATE TABLE DELIVERYFEEDBACK (
+    FeedbackID INT PRIMARY KEY ,
+    OrderID INT,
+    FeedbackText VARCHAR(255),
+    Rating INT,
+    FOREIGN KEY (OrderID) REFERENCES ORDERS(OrderID)
+);
+
+
+CREATE TABLE MENUS (
+    MenuID INT PRIMARY KEY ,
+    RestaurantID INT,
+    ItemName VARCHAR(255),
+    Price DECIMAL(10, 2),
+    FOREIGN KEY (RestaurantID) REFERENCES RESTAURANTS(RestaurantID)
+);
+
+
+CREATE TABLE CATEGORIES (
+    CategoryID INT PRIMARY KEY ,
+    CategoryName VARCHAR(255)
+);
+
+
+CREATE TABLE ZONES (
+    ZoneID INT PRIMARY KEY ,
+    ZoneName VARCHAR(255)
+);
